@@ -6,5 +6,6 @@ router.post("/reserva", controller.reservarLab)
 router.get("/reserva", controller.listarReservas)
 router.get("/reserva/:id", controller.buscarReserva)
 router.delete("/reserva/:id", controller.deletarReserva)
+router.put("/reserva/:id", controller.deletarReserva)
 
 module.exports = router
