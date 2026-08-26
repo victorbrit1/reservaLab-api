@@ -4,8 +4,8 @@ const sequelize = require("../config/database")
 const Reserva = sequelize.define("Reserva", {
     id:{
         type:DataTypes.INTEGER,
-        autoincrement:true,
-        primarykey:true
+        autoIncrement:true,
+        primaryKey:true
       },
       nome:{
         type:DataTypes.STRING,
