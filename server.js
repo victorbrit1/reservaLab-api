@@ -1,7 +1,11 @@
 const express = require("express")
 const sequelize = require("./src/config/database")
+const router = require("./src/routes/reservaRoutes")
 
 const app = express()
+
+app.use(router)
+app.use(express.json())
 
 sequelize.sync()
 

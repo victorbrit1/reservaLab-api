@@ -24,7 +24,48 @@ async function listarReservas(req,res) {
     }  
 }
 
+async function buscarReserva(req,res,params) {
+    try{
+        const reservaID = Number(req.params.id)
+        
+        const reserva = await Reserva.findByPk(reservaID)
+
+        if(!reserva){
+            return res.status(404).json({message:"reserva não encontrada"})
+        }
+
+        return res.status(200).json(reserva)
+    }catch(error){
+        console.log(error)
+
+        return res.status(500).json({error: "Erro ao buscar a reserva"})
+    }
+        
+}
+async function deletarReserva(req,res,params) {
+    try{
+        const reservaID = Number(req.params.id)
+        
+        const reserva = await Reserva.findByPk(reservaID)
+
+        if(!reserva){
+            return res.status(404).json({message:"reserva não encontrada"})
+        }
+
+        await reserva.destroy()
+
+        return res.status(204).send()
+    }catch(error){
+        console.log(error)
+
+        return res.status(500).json({error: "Erro ao buscar a reserva"})
+    }
+        
+}
+
 module.exports = {
     listarReservas,
-    reservarLab
+    reservarLab,
+    deletarReserva,
+    buscarReserva
 }
