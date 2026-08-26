@@ -18,11 +18,11 @@ module.exports = {
         allowNull:false
       },
       horario_ent:{
-        type:Sequelize.REAL,
+        type:Sequelize.TIME,
         allowNull:false
       },
       horario_saida:{
-        type:Sequelize.REAL,
+        type:Sequelize.TIME,
         allowNull:false
       },
       lab:{

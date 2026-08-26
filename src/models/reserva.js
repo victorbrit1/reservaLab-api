@@ -32,3 +32,5 @@ const Reserva = sequelize.define("Reserva", {
         allowNull:false
       },
 })
+
+module.exports = Reserva
