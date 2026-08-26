@@ -4,8 +4,8 @@ const router = require("./src/routes/reservaRoutes")
 
 const app = express()
 
-app.use(router)
 app.use(express.json())
+app.use(router)
 
 sequelize.sync()
 
